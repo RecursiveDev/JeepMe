@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: jeepme --default;
+}
+
+/* ─── JeepMe Custom Theme ──────────────────────────────────────────────── */
+@plugin "daisyui/theme" {
+  name: "jeepme";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+  primary: #F59E0B;
+  primary-content: #1E293B;
+  secondary: #0EA5E9;
+  secondary-content: #ffffff;
+  accent: #EF4444;
+  accent-content: #ffffff;
+  neutral: #1E293B;
+  neutral-content: #CBD5E1;
+  base-100: #0F172A;
+  base-200: #1E293B;
+  base-300: #334155;
+  base-content: #F1F5F9;
+  info: #0EA5E9;
+  success: #10B981;
+  warning: #F59E0B;
+  error: #EF4444;
+  --rounded-box: 1rem;
+  --rounded-btn: 0.75rem;
+}
+
+/* ─── Global Styles ────────────────────────────────────────────────────── */
+@theme inline {
+  --color-background: #0F172A;
+  --color-foreground: #F1F5F9;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0F172A;
+}
+
+/* ─── Custom Leaflet Overrides ─────────────────────────────────────────── */
+.leaflet-container {
+  background: #0F172A !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(15, 23, 42, 0.7) !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 9px !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-control-attribution a {
+  color: rgba(245, 158, 11, 0.6) !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px);
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(30, 41, 59, 0.9) !important;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.92) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.92) !important;
+}
+
+.leaflet-popup-close-button {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ─── DaisyUI Steps Override for Dark Theme ────────────────────────────── */
+.steps .step::before {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.steps .step-success::before {
+  background: rgba(16, 185, 129, 0.3) !important;
+}
+
+.steps .step-error::before {
+  background: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* ─── Scrollbar Styles ─────────────────────────────────────────────────── */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Utility Animations ───────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* ─── Map Control Buttons ──────────────────────────────────────────────── */
+.map-control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.map-control-btn:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.map-control-btn:active {
+  transform: scale(0.95);
+}
+
+/* ─── Landmark Tooltips ────────────────────────────────────────────────── */
+.landmark-tooltip {
+  background: rgba(15, 23, 42, 0.9) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  padding: 3px 8px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  white-space: nowrap !important;
+}
+
+.landmark-tooltip::before {
+  border-top-color: rgba(15, 23, 42, 0.9) !important;
+}
+
+/* ─── GPS Location Pulse ───────────────────────────────────────────────── */
+@keyframes locationPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.location-pulse {
+  animation: locationPulse 2s infinite;
+}
+
