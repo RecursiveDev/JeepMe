@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE / editor
+.idea/
+.vscode/settings.local.json
+.vscode/*.local.json
+.eslintcache
