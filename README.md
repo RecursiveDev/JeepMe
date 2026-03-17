@@ -36,9 +36,6 @@
   <a href="https://github.com/RecursiveDev/JeepMe/actions/workflows/ci.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/RecursiveDev/JeepMe/ci.yml?branch=main&style=flat-square" alt="CI">
   </a>
-  <a href="https://github.com/RecursiveDev/JeepMe/actions/workflows/pages.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/RecursiveDev/JeepMe/pages.yml?branch=main&style=flat-square" alt="Pages">
-  </a>
   <a href="https://github.com/RecursiveDev/JeepMe/issues">
     <img src="https://img.shields.io/github/issues/RecursiveDev/JeepMe?style=flat-square" alt="Issues">
   </a>
