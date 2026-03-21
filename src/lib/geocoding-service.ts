@@ -5,7 +5,7 @@ const NOMINATIM_BASE = 'https://nominatim.openstreetmap.org';
 
 // Cebu metro area bounding box for bounded search
 const CEBU_VIEWBOX = '123.7,10.1,124.1,10.6';
-
+// SAMPLE TO PR
 // Simple rate-limiter: 1 request per second (Nominatim policy)
 let lastRequestTime = 0;
 async function rateLimited<T>(fn: () => Promise<T>): Promise<T> {
