@@ -6,7 +6,7 @@ const OSRM_BASE = 'https://router.project-osrm.org';
 
 // In-memory cache for snapped routes
 const snappedCache = new Map<string, Coordinate[]>();
-
+// {R{R{R{R}}}}
 /**
  * Snap a sequence of waypoints to actual streets using OSRM.
  * Returns a detailed coordinate array that follows real roads.
